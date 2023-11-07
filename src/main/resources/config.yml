@@ -1,0 +1,21 @@
+# |------------------------------------------------------------------------------------------------------|
+# |    _____                 ___________                            __   __        __         ____  ___  |
+# |   /     \ _____  ___  ___\_  _____/ ______ ______ ____   _____/  |_|__|____  |  |   _____\   \/  /   |
+# |  /  \ /  \\__  \ \  \/  / |   __)_ /  ___//  ___// __ \ /    \   __\  \__  \ |  |  /  ___/\     /    |
+# | /    Y    \/ __ \_>    <  |       \\___ \ \___ \\  ___/|   |  \  | |  |/ __ \|  |__\___ \ /     \    |
+# | \____|__  (____  /__/\_ \/______  /____  >____  >\___  >___|  /__| |__(____  /____/____  >___/\  \   |
+# |         \/     \/      \/        \/     \/     \/     \/     \/             \/          \/      \_/  |
+# |------------------------------------------------------------------------------------------------------|
+
+# WELCOME! This is the config file for the MaxEssentialsX V-231101/DEV! You can find the settings for everything from Shop Prices to Database credentials.
+
+# Prefix is what is said before everything in the console and some chat messages. This will be for the test command and just to know what plugin you are running the command from (this uses bukkit colour codes starting with &)
+prefix: "&1M&aS&7X:&f "
+
+# These are where the player will automatically be spawned always whenever joining. Don't forgot to add .5 for the x and y.
+spawnx: 210.5
+spawny: 92
+spawnz: 203.5
+
+# Use this to lock the server, this will not harm everyone though, just those trying to join after slocking.
+slocked: "n"

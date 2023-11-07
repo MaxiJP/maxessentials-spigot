@@ -1,0 +1,41 @@
+main: dev.maxprime.maxessentials.MaxEssentialsX
+name: MaxEssentialsX
+version: 0.1
+author: MaxJDK
+commands:
+  maxessentialsx:
+    description: Testing testing 123!
+    usage: /<command>
+  msx:
+    description: Testing testing 123 (but shorter)!
+    usage: /<command>
+  gmc:
+    description: Easily turn into a GOD
+    usage: /<command>
+  gms:
+    description: Easily turn into a noob...
+    usage: /<command>
+  gma:
+    description: Easily turn into a visible ghost
+    usage: /<command>
+  gmsp:
+    description: Easily turn into an invisible ghost
+    usage: /<command>
+  maxinv:
+    description: Testing the inventory impl
+    usage: /<command>
+  maxfly:
+    description: Fly like a birb!
+    usage: /<command>
+  maxprefixset:
+    description: Contact the MaxDB to change your prefix!
+    usage: /<command> <prefix>
+  maxsuffixset:
+    description: Contact the MaxDB to change your suffix!
+    usage: /<command> <suffix>
+  setcoins:
+    description: Changing info
+  setxp:
+    description: Changing info
+  setlevel:
+    description: Changing info
