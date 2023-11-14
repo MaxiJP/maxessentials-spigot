@@ -39,3 +39,5 @@ commands:
     description: Changing info
   setlevel:
     description: Changing info
+  maxkick:
+    description: Kick a player, Max style!

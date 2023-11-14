@@ -10,8 +10,8 @@ import org.bukkit.plugin.Plugin;
 
 public class TestCommand implements CommandExecutor {
 
-    private static Plugin msx = Bukkit.getServer().getPluginManager().getPlugin("MaxEssentialsX");
-    private static String prefix = ChatColor.translateAlternateColorCodes('&', msx.getConfig().getString("prefix"));
+    private static final Plugin msx = Bukkit.getServer().getPluginManager().getPlugin("MaxEssentialsX");
+    private static final String prefix = ChatColor.translateAlternateColorCodes('&', msx.getConfig().getString("prefix"));
 
     @Override
     public boolean onCommand(CommandSender s, Command c, String l, String[] args) {
@@ -19,14 +19,12 @@ public class TestCommand implements CommandExecutor {
             Player p = (Player) s;
             if (p.hasPermission("maxessentialsx.test")) {
                 p.sendMessage(prefix + "Hello Max! This plugin is working fine!");
-                return true;
             } else {
                 p.sendMessage("Sorry! You don't have permission to run this MaxEssentialsX command.");
-                return true;
             }
         } else {
             s.sendMessage(prefix + "Hello Console! This plugin is working fine!");
-            return true;
         }
+        return true;
     }
 }

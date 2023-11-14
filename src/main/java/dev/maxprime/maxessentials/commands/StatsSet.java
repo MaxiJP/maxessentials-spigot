@@ -13,7 +13,7 @@ import java.sql.SQLException;
 
 public class StatsSet implements CommandExecutor {
 
-    private MaxEssentialsX plugin;
+    private final MaxEssentialsX plugin;
 
 
     public StatsSet(MaxEssentialsX plugin) {
@@ -24,7 +24,11 @@ public class StatsSet implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender s, Command c, String l, String[] args) {
-        Player p = (Player) Bukkit.getOfflinePlayer(args[0]);
+        Player p = Bukkit.getPlayer(args[0]);
+        if (p == null) {
+            s.sendMessage("This play doesn't exist or isn't online right now.");
+            return true;
+        }
         try {
             PlayerStats oldStats = plugin.getDb().getPlayerStatsByUUID(p.getUniqueId().toString());
             PlayerStats stats = new PlayerStats(p.getUniqueId().toString(), Integer.parseInt(args[1]), oldStats.getXp(), oldStats.getLevel(), oldStats.getPrefix(), oldStats.getSuffix());

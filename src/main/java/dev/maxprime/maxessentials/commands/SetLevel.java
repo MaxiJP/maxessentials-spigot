@@ -8,13 +8,12 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
 
 import java.sql.SQLException;
 
 public class SetLevel implements CommandExecutor {
 
-    public MaxEssentialsX plugin;
+    private final MaxEssentialsX plugin;
 
     public SetLevel(MaxEssentialsX plugin) {
         this.plugin = plugin;
@@ -25,7 +24,11 @@ public class SetLevel implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender s, Command c, String l, String[] args) {
 
-        Player p = (Player) Bukkit.getOfflinePlayer(args[0]);
+        Player p = Bukkit.getPlayer(args[0]);
+        if (p == null) {
+            s.sendMessage("This play doesn't exist or isn't online right now.");
+            return true;
+        }
         try {
             PlayerStats oldStats = plugin.getDb().getPlayerStatsByUUID(p.getUniqueId().toString());
             PlayerStats stats = new PlayerStats(p.getUniqueId().toString(), oldStats.getCoins(), oldStats.getXp(), Integer.parseInt(args[1]), oldStats.getPrefix(), oldStats.getSuffix());

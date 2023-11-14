@@ -8,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.sql.SQLException;
+import java.util.Arrays;
 
 public class SuffixSet implements CommandExecutor {
 
@@ -36,7 +37,7 @@ public class SuffixSet implements CommandExecutor {
 
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            System.out.println(Arrays.toString(ex.getStackTrace()));
         }
 
         return true;

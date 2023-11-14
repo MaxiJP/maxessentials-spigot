@@ -1,5 +1,7 @@
 package dev.maxprime.maxessentials.commands;
 
+import dev.maxprime.maxessentials.MaxEssentialsX;
+import dev.maxprime.maxessentials.config.Config;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
@@ -11,8 +13,14 @@ import org.bukkit.plugin.Plugin;
 
 public class GamemodeCommand implements CommandExecutor {
 
-    private static Plugin msx = Bukkit.getServer().getPluginManager().getPlugin("MaxEssentialsX");
-    private static String prefix = ChatColor.translateAlternateColorCodes('&', msx.getConfig().getString("prefix"));
+    private MaxEssentialsX plugin;
+
+    private final String prefix = new Config().getPrefix();
+
+    public GamemodeCommand(MaxEssentialsX plugin) {
+        this.plugin = plugin;
+    }
+
 
     @Override
     public boolean onCommand(CommandSender s, Command c, String l, String[] args) {

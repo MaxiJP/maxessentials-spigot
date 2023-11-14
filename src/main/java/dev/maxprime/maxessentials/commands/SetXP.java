@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
 import java.sql.SQLException;
 
 public class SetXP implements CommandExecutor {
-    private MaxEssentialsX plugin;
+    private final MaxEssentialsX plugin;
 
     public SetXP(MaxEssentialsX plugin) {
         this.plugin = plugin;
@@ -23,7 +23,11 @@ public class SetXP implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender s, Command c, String l, String[] args) {
 
-        Player p = (Player) Bukkit.getOfflinePlayer(args[0]);
+        Player p = Bukkit.getPlayer(args[0]);
+        if (p == null) {
+            s.sendMessage("This play doesn't exist or isn't online right now.");
+            return true;
+        }
         try {
             PlayerStats oldStats = plugin.getDb().getPlayerStatsByUUID(p.getUniqueId().toString());
             PlayerStats stats = new PlayerStats(p.getUniqueId().toString(), oldStats.getCoins(), Integer.parseInt(args[1]), oldStats.getLevel(), oldStats.getPrefix(), oldStats.getSuffix());

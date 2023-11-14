@@ -39,10 +39,6 @@ public class PlayerStats {
         return uuid;
     }
 
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
-
     public int getCoins() {
         return coins;
     }

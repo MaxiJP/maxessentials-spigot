@@ -4,7 +4,7 @@ import dev.maxprime.maxessentials.models.PlayerStats;
 
 import java.sql.*;
 
-public class MaxDBInstance {
+public class MaxDB {
 
     private Connection connection;
 
